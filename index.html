@@ -96,6 +96,113 @@
     font-size: 1.1rem;
   }
 
+  /* 価格セクションの強調コールアウト */
+  .lead-callout {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(135deg, rgba(255,107,53,0.08) 0%, rgba(255,107,53,0.02) 100%);
+    border: 2px solid rgba(255,107,53,0.25);
+    border-radius: 20px;
+    text-align: center;
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  .lead-callout p { margin-bottom: 0.4rem; }
+  .lead-callout p:last-child { margin-bottom: 0; }
+  .lead-price {
+    color: var(--orange);
+    font-size: 1.6em;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .lead-highlight {
+    background: linear-gradient(transparent 60%, rgba(255,107,53,0.35) 60%);
+    color: var(--text);
+    font-weight: 700;
+    padding: 0 0.1em;
+  }
+
+  /* 高額品の具体例カード */
+  .example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .example-card {
+    background: var(--bg);
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .example-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(255,107,53,0.15);
+  }
+  .example-emoji {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .example-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.2rem;
+  }
+  .example-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+  .example-meta {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+  .example-arrow {
+    color: var(--orange);
+    font-size: 1rem;
+    margin: 0.4rem 0;
+    opacity: 0.7;
+  }
+  .example-result {
+    background: linear-gradient(135deg, rgba(255,107,53,0.12) 0%, rgba(255,107,53,0.04) 100%);
+    border: 1px solid rgba(255,107,53,0.2);
+    border-radius: 12px;
+    padding: 0.8rem 0.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .example-result span {
+    display: block;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.1rem;
+  }
+  .example-result strong {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--orange);
+    letter-spacing: -0.02em;
+  }
+  .example-comment {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    line-height: 1.6;
+  }
+  .example-footnote {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+
   /* Problems */
   .problems {
     background: var(--card);
@@ -273,6 +380,57 @@
 
 <section class="problems">
   <div class="container">
+    <h2>高い買い物、1日いくらか知ってる？</h2>
+    <p class="lead">サブスクだけじゃない。<br>10万円超の家電・家具・車も「1日いくら」で見えるようになります。</p>
+    <div class="example-grid">
+
+      <div class="example-card">
+        <span class="example-emoji">🚗</span>
+        <p class="example-label">車</p>
+        <p class="example-price">¥3,000,000</p>
+        <p class="example-meta">10年乗るつもり</p>
+        <div class="example-arrow">▼</div>
+        <p class="example-result"><span>1日</span><strong>¥822</strong></p>
+        <p class="example-comment">長く乗るほど、1日いくらが<br>どんどん下がっていきます。</p>
+      </div>
+
+      <div class="example-card">
+        <span class="example-emoji">🧊</span>
+        <p class="example-label">冷蔵庫</p>
+        <p class="example-price">¥250,000</p>
+        <p class="example-meta">10年使う想定</p>
+        <div class="example-arrow">▼</div>
+        <p class="example-result"><span>1日</span><strong>¥68</strong></p>
+        <p class="example-comment">缶コーヒー1本以下。<br>意外と元取れてる、と気づける。</p>
+      </div>
+
+      <div class="example-card">
+        <span class="example-emoji">📱</span>
+        <p class="example-label">スマホ</p>
+        <p class="example-price">¥160,000</p>
+        <p class="example-meta">4年使う想定</p>
+        <div class="example-arrow">▼</div>
+        <p class="example-result"><span>1日</span><strong>¥110</strong></p>
+        <p class="example-comment">コンビニコーヒー1杯分。<br>毎日触ってるなら、十分元取れ。</p>
+      </div>
+
+      <div class="example-card">
+        <span class="example-emoji">🛋️</span>
+        <p class="example-label">ソファ</p>
+        <p class="example-price">¥150,000</p>
+        <p class="example-meta">7年使う想定</p>
+        <div class="example-arrow">▼</div>
+        <p class="example-result"><span>1日</span><strong>¥59</strong></p>
+        <p class="example-comment">毎日寝転ぶだけで元取れ。<br>高い買い物も納得できる。</p>
+      </div>
+
+    </div>
+    <p class="example-footnote">※ アプリでは購入日と想定使用年数を入れるだけで自動計算されます</p>
+  </div>
+</section>
+
+<section class="problems">
+  <div class="container">
     <h2>無駄チェック&統計</h2>
     <div class="feature-grid">
       <div class="feature">
@@ -312,10 +470,13 @@
 <section class="pricing">
   <div class="container">
     <h2>シンプルな価格</h2>
-    <p class="lead">サブスクじゃないワンタイム購入。解約1件できれば即ペイ</p>
+    <div class="lead-callout">
+      <p>アプリ代、たったの <strong class="lead-price">¥250</strong>。</p>
+      <p>使ってないサブスク <strong class="lead-highlight">1個解約</strong> したら、<br><strong class="lead-highlight">その月のうちに取り返せる</strong> 計算です。</p>
+    </div>
     <div class="price-card">
       <p style="color: var(--secondary); font-size: 0.9em;">買い切り</p>
-      <div class="price">¥250<span class="price-unit">/ 一回</span></div>
+      <div class="price">¥250<span class="price-unit">/ 一回きり</span></div>
       <ul>
         <li>全機能が永久に使える</li>
         <li>追加課金なし</li>
@@ -330,8 +491,8 @@
 
 <section class="cta-section">
   <div class="container">
-    <h2>あなたの1日 ¥41 の冷蔵庫<br>元取れてますか？</h2>
-    <p class="tagline">モトトレで、本当のコスパを可視化</p>
+    <h2>気づかぬうちに、<br>年¥10万 消えてませんか？</h2>
+    <p class="tagline">使ってないサブスクとジムは、だいたいこのくらい。<br>モトトレで、見えるようにしませんか？</p>
     <div class="badge-row">
       <a href="#" class="app-store-badge">📱 App Storeで近日公開</a>
     </div>
