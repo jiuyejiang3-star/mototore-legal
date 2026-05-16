@@ -203,6 +203,103 @@
     margin-top: 1rem;
   }
 
+  /* コスパ判定の目安ガイド */
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .guide-card {
+    background: var(--card);
+    padding: 1.75rem 1.5rem;
+    border-radius: 18px;
+    border: 1px solid rgba(255,107,53,0.15);
+  }
+  .guide-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .guide-emoji {
+    font-size: 2rem;
+  }
+  .guide-card h3 {
+    font-size: 1.3rem;
+    color: var(--text);
+  }
+  .guide-formula {
+    background: var(--bg);
+    border: 1px solid rgba(255,107,53,0.2);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    color: var(--orange);
+    font-weight: 600;
+  }
+  .guide-examples {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+  .guide-examples li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+    color: var(--text);
+    border-bottom: 1px dashed rgba(110,110,115,0.15);
+  }
+  .guide-examples li:last-child { border-bottom: none; }
+  .guide-examples li::before {
+    content: "•  ";
+    color: var(--secondary);
+  }
+  .guide-benchmarks {
+    margin-bottom: 1rem;
+  }
+  .bench {
+    padding: 0.5rem 0.7rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+  .bench span {
+    display: inline-block;
+    width: 1.5em;
+  }
+  .bench-good {
+    background: rgba(52, 199, 89, 0.12);
+    color: #2a8b40;
+  }
+  .bench-ok {
+    background: rgba(255, 159, 10, 0.12);
+    color: #c47100;
+  }
+  .bench-bad {
+    background: rgba(255, 59, 48, 0.12);
+    color: #c33530;
+  }
+  @media (prefers-color-scheme: dark) {
+    .bench-good { color: #80e09a; }
+    .bench-ok   { color: #ffb95a; }
+    .bench-bad  { color: #ff7a72; }
+  }
+  .guide-tip {
+    font-size: 0.85rem;
+    color: var(--secondary);
+    background: rgba(255,107,53,0.07);
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--orange);
+  }
+  .guide-footnote {
+    text-align: center;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+
   /* Problems */
   .problems {
     background: var(--card);
@@ -464,6 +561,139 @@
         <p>iPhone・iPadで自動同期。機種変も安心。第三者にデータは渡りません</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>コスパ判定の目安</h2>
+    <p class="lead">「1日いくら」が高いか安いか、判定基準を公開</p>
+
+    <div class="guide-grid">
+
+      <div class="guide-card">
+        <div class="guide-head">
+          <span class="guide-emoji">📱</span>
+          <h3>スマホ・ゲーム機</h3>
+        </div>
+        <p class="guide-formula">購入価格 ÷ (使用年数 × 365日)</p>
+        <ul class="guide-examples">
+          <li>10万円 × 2年 → 1日 ¥137</li>
+          <li>10万円 × 3年 → 1日 ¥91</li>
+          <li>15万円 × 4年 → 1日 ¥103</li>
+          <li>20万円 × 2年で買換 → 1日 ¥274</li>
+        </ul>
+        <div class="guide-benchmarks">
+          <div class="bench bench-good"><span>✅</span> 1日¥100以下 — コスパ良好</div>
+          <div class="bench bench-ok"><span>🟡</span> 1日¥150-¥200 — 標準</div>
+          <div class="bench bench-bad"><span>🔴</span> 1日¥300超 — 買換早すぎ</div>
+        </div>
+        <p class="guide-tip">💡 1日中触る道具。3〜5時間使うとして時給換算30円なら十分。</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-head">
+          <span class="guide-emoji">🧊</span>
+          <h3>家具家電</h3>
+        </div>
+        <p class="guide-formula">購入価格 ÷ (使用年数 × 365日)</p>
+        <ul class="guide-examples">
+          <li>25万円の冷蔵庫 × 8年 → 1日 ¥86</li>
+          <li>10万円の洗濯機 × 10年 → 1日 ¥27</li>
+          <li>20万円のテレビ × 7年 → 1日 ¥78</li>
+          <li>5万円のソファ × 5年 → 1日 ¥27</li>
+        </ul>
+        <div class="guide-benchmarks">
+          <div class="bench bench-good"><span>✅</span> 1日¥50以下 — コスパ良好</div>
+          <div class="bench bench-ok"><span>🟡</span> 1日¥100まで — 標準</div>
+          <div class="bench bench-bad"><span>🔴</span> 1日¥150超 — 買換ペース早すぎ</div>
+        </div>
+        <p class="guide-tip">💡 冷蔵庫・洗濯機は10年以上使うと元取れ実感。</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-head">
+          <span class="guide-emoji">🚗</span>
+          <h3>車</h3>
+        </div>
+        <p class="guide-formula">車両価格 ÷ (使用年数 × 365日)</p>
+        <ul class="guide-examples">
+          <li>300万円 × 7年 → 1日 ¥1,174</li>
+          <li>300万円 × 10年 → 1日 ¥822</li>
+          <li>500万円のSUV × 7年 → 1日 ¥1,957</li>
+          <li>150万円の軽 × 10年 → 1日 ¥411</li>
+        </ul>
+        <div class="guide-benchmarks">
+          <div class="bench bench-good"><span>✅</span> 1日¥500以下 — 長期所有</div>
+          <div class="bench bench-ok"><span>🟡</span> 1日¥1,000まで — 標準</div>
+          <div class="bench bench-bad"><span>🔴</span> 1日¥2,000超 — 短期所有</div>
+        </div>
+        <p class="guide-tip">💡 本体価格のみ。維持費（ガソリン・税金・車検）は別計算。</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-head">
+          <span class="guide-emoji">✨</span>
+          <h3>美容機器</h3>
+        </div>
+        <p class="guide-formula">購入価格 ÷ 使用回数</p>
+        <ul class="guide-examples">
+          <li>5万円の脱毛器 × 100回 → 1回 ¥500</li>
+          <li>5万円 × 200回 → 1回 ¥250</li>
+          <li>3万円の美顔器 × 150回 → 1回 ¥200</li>
+          <li>10万円 × 50回で放置 → 1回 ¥2,000</li>
+        </ul>
+        <div class="guide-benchmarks">
+          <div class="bench bench-good"><span>✅</span> 1回¥300以下 — コスパ良好</div>
+          <div class="bench bench-ok"><span>🟡</span> 1回¥500まで — 標準</div>
+          <div class="bench bench-bad"><span>🔴</span> 1回¥1,000超 — 未使用気味</div>
+        </div>
+        <p class="guide-tip">💡 サロン1回¥5,000〜¥10,000と比較すれば、100回で余裕。</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-head">
+          <span class="guide-emoji">🏋️</span>
+          <h3>ジム</h3>
+        </div>
+        <p class="guide-formula">月会費 ÷ 月の通った回数</p>
+        <ul class="guide-examples">
+          <li>¥10,000 × 月15回 → 1回 ¥667</li>
+          <li>¥10,000 × 月8回 → 1回 ¥1,250</li>
+          <li>¥10,000 × 月4回 → 1回 ¥2,500</li>
+          <li>¥10,000 × 月25回 → 1回 ¥400</li>
+        </ul>
+        <div class="guide-benchmarks">
+          <div class="bench bench-good"><span>✅</span> 1回¥600以下 — 週3-4以上</div>
+          <div class="bench bench-ok"><span>🟡</span> 1回¥1,000まで — 週2</div>
+          <div class="bench bench-bad"><span>🔴</span> 1回¥2,000超 — 都度払い検討</div>
+        </div>
+        <p class="guide-tip">💡 都度払いは1回¥1,500〜¥3,000。月15回以上で月会費型がお得。</p>
+      </div>
+
+      <div class="guide-card">
+        <div class="guide-head">
+          <span class="guide-emoji">📺</span>
+          <h3>動画サブスク</h3>
+        </div>
+        <p class="guide-formula">月額 ÷ 月の使用日数</p>
+        <ul class="guide-examples">
+          <li>Netflix ¥1,980 × 月22日 → 1日 ¥90</li>
+          <li>Spotify ¥980 × 月22日 → 1日 ¥45</li>
+          <li>Netflix ¥1,980 × 月5日 → 1日 ¥396</li>
+          <li>Netflix ¥1,980 × 毎日30日 → 1日 ¥66</li>
+        </ul>
+        <div class="guide-benchmarks">
+          <div class="bench bench-good"><span>✅</span> 1日¥100以下 — 元取れ</div>
+          <div class="bench bench-ok"><span>🟡</span> 1日¥200まで — ライト利用</div>
+          <div class="bench bench-bad"><span>🔴</span> 1日¥500超 — 解約検討</div>
+        </div>
+        <p class="guide-tip">💡 月22日以上で元取れライン。月5日以下なら都度レンタルが安いことも。</p>
+      </div>
+
+    </div>
+
+    <p class="guide-footnote">※ あくまで一般的な目安です。実際の判断は使用頻度・収入・ライフスタイルによります。</p>
   </div>
 </section>
 
