@@ -1,742 +1,163 @@
 <!DOCTYPE html>
-<html lang="ja" translate="no">
+<html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google" content="notranslate">
-<meta http-equiv="Content-Language" content="ja">
-<title>モトトレ - 持ち物のコスパ管理 / サブスク見直しアプリ</title>
-<meta name="description" content="あなたの持ち物、1日いくら？ サブスク・ジム・家電・スマホ・車を「1日¥X」で可視化する節約アプリ。サブスクじゃない、サブスク見直しアプリ。¥250 買い切り。">
-<meta property="og:title" content="モトトレ - サブスクじゃない、サブスク見直しアプリ">
-<meta property="og:description" content="あなたの持ち物、1日いくら？ Netflix・ジム・スマホ・車、全部1日¥Xで見えると、ムダなサブスクが一発で分かる。¥250 買い切り。">
-<meta property="og:type" content="website">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>モトトレ サポート — 持ち物のコスパ管理</title>
+<meta name="description" content="モトトレ（持ち物のコスパ管理アプリ）の公式サポートページ。お問い合わせ、よくある質問、プライバシーポリシーをご確認いただけます。" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="モトトレ サポート" />
+<meta property="og:description" content="モトトレのサポート・お問い合わせ・プライバシーポリシー" />
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="https://jiuyejiang3-star.github.io/motodore-site/assets/app-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    --orange: #FF6B35;
-    --orange-dark: #E55525;
-    --bg: #FFFFFF;
-    --text: #1c1c1e;
-    --secondary: #6e6e73;
-    --card: #F5F5F7;
+  :root{
+    --ink:#1d1d1f;
+    --ink-2:#4a4a4f;
+    --ink-3:#86868b;
+    --bg:#ffffff;
+    --bg-2:#f5f5f7;
+    --line:rgba(0,0,0,.08);
+    --gold:#d4a574;
+    --gold-dark:#a8825a;
+    --accent:#000;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0a0a0a;
-      --text: #f5f5f7;
-      --secondary: #98989d;
-      --card: #1c1c1e;
+  @media (prefers-color-scheme: dark){
+    :root{
+      --ink:#f5f5f7;
+      --ink-2:#c9c9d0;
+      --ink-3:#888;
+      --bg:#0a0a0a;
+      --bg-2:#161616;
+      --line:rgba(255,255,255,.08);
+      --accent:#fff;
     }
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
-    line-height: 1.7;
-    color: var(--text);
-    background: var(--bg);
-  }
-  .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-
-  /* Hero */
-  .hero {
-    background: linear-gradient(135deg, var(--orange) 0%, #FFB95A 100%);
-    color: white;
-    padding: 6rem 1.5rem 5rem;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .hero .tagline {
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    opacity: 0.95;
-    margin-bottom: 2.5rem;
-    font-weight: 300;
-  }
-  .badge-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .app-store-badge {
-    background: black;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 14px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    gap: 0.6rem;
-    align-items: center;
-    transition: transform 0.2s;
-  }
-  .app-store-badge:hover { transform: translateY(-2px); }
-  .price-badge {
-    background: rgba(255,255,255,0.25);
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 14px;
-    font-weight: 600;
-    backdrop-filter: blur(10px);
-  }
-
-  /* Section */
-  section { padding: 5rem 0; }
-  section h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  section .lead {
-    text-align: center;
-    color: var(--secondary);
-    margin-bottom: 3rem;
-    font-size: 1.1rem;
-  }
-
-  /* 価格セクションの強調コールアウト */
-  .lead-callout {
-    max-width: 720px;
-    margin: 0 auto 3rem;
-    padding: 2rem 1.5rem;
-    background: linear-gradient(135deg, rgba(255,107,53,0.08) 0%, rgba(255,107,53,0.02) 100%);
-    border: 2px solid rgba(255,107,53,0.25);
-    border-radius: 20px;
-    text-align: center;
-    font-size: clamp(1.2rem, 2.6vw, 1.6rem);
-    line-height: 1.8;
-    font-weight: 500;
-  }
-  .lead-callout p { margin-bottom: 0.4rem; }
-  .lead-callout p:last-child { margin-bottom: 0; }
-  .lead-price {
-    color: var(--orange);
-    font-size: 1.6em;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-  .lead-highlight {
-    background: linear-gradient(transparent 60%, rgba(255,107,53,0.35) 60%);
-    color: var(--text);
-    font-weight: 700;
-    padding: 0 0.1em;
-  }
-
-  /* 高額品の具体例カード */
-  .example-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.25rem;
-    margin-bottom: 1.5rem;
-  }
-  .example-card {
-    background: var(--bg);
-    padding: 1.75rem 1.25rem;
-    border-radius: 18px;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.2s;
-  }
-  .example-card:hover {
-    border-color: var(--orange);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(255,107,53,0.15);
-  }
-  .example-emoji {
-    font-size: 2.8rem;
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-  .example-label {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 0.2rem;
-  }
-  .example-price {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--text);
-    letter-spacing: -0.02em;
-  }
-  .example-meta {
-    color: var(--secondary);
-    font-size: 0.85rem;
-    margin-bottom: 0.6rem;
-  }
-  .example-arrow {
-    color: var(--orange);
-    font-size: 1rem;
-    margin: 0.4rem 0;
-    opacity: 0.7;
-  }
-  .example-result {
-    background: linear-gradient(135deg, rgba(255,107,53,0.12) 0%, rgba(255,107,53,0.04) 100%);
-    border: 1px solid rgba(255,107,53,0.2);
-    border-radius: 12px;
-    padding: 0.8rem 0.5rem;
-    margin-bottom: 0.8rem;
-  }
-  .example-result span {
-    display: block;
-    color: var(--secondary);
-    font-size: 0.85rem;
-    margin-bottom: 0.1rem;
-  }
-  .example-result strong {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--orange);
-    letter-spacing: -0.02em;
-  }
-  .example-comment {
-    font-size: 0.85rem;
-    color: var(--secondary);
-    line-height: 1.6;
-  }
-  .example-footnote {
-    text-align: center;
-    color: var(--secondary);
-    font-size: 0.85rem;
-    margin-top: 1rem;
-  }
-
-  /* コスパ判定の目安ガイド */
-  .guide-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .guide-card {
-    background: var(--card);
-    padding: 1.75rem 1.5rem;
-    border-radius: 18px;
-    border: 1px solid rgba(255,107,53,0.15);
-  }
-  .guide-head {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-bottom: 1rem;
-  }
-  .guide-emoji {
-    font-size: 2rem;
-  }
-  .guide-card h3 {
-    font-size: 1.3rem;
-    color: var(--text);
-  }
-  .guide-formula {
-    background: var(--bg);
-    border: 1px solid rgba(255,107,53,0.2);
-    border-radius: 8px;
-    padding: 0.7rem 0.9rem;
-    font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    color: var(--orange);
-    font-weight: 600;
-  }
-  .guide-examples {
-    list-style: none;
-    margin-bottom: 1rem;
-  }
-  .guide-examples li {
-    padding: 0.25rem 0;
-    font-size: 0.9rem;
-    color: var(--text);
-    border-bottom: 1px dashed rgba(110,110,115,0.15);
-  }
-  .guide-examples li:last-child { border-bottom: none; }
-  .guide-examples li::before {
-    content: "•  ";
-    color: var(--secondary);
-  }
-  .guide-benchmarks {
-    margin-bottom: 1rem;
-  }
-  .bench {
-    padding: 0.5rem 0.7rem;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    margin-bottom: 0.4rem;
-  }
-  .bench span {
-    display: inline-block;
-    width: 1.5em;
-  }
-  .bench-good {
-    background: rgba(52, 199, 89, 0.12);
-    color: #2a8b40;
-  }
-  .bench-ok {
-    background: rgba(255, 159, 10, 0.12);
-    color: #c47100;
-  }
-  .bench-bad {
-    background: rgba(255, 59, 48, 0.12);
-    color: #c33530;
-  }
-  @media (prefers-color-scheme: dark) {
-    .bench-good { color: #80e09a; }
-    .bench-ok   { color: #ffb95a; }
-    .bench-bad  { color: #ff7a72; }
-  }
-  .guide-tip {
-    font-size: 0.85rem;
-    color: var(--secondary);
-    background: rgba(255,107,53,0.07);
-    padding: 0.6rem 0.8rem;
-    border-radius: 8px;
-    border-left: 3px solid var(--orange);
-  }
-  .guide-footnote {
-    text-align: center;
-    color: var(--secondary);
-    font-size: 0.85rem;
-    margin-top: 1rem;
-  }
-
-  /* Problems */
-  .problems {
-    background: var(--card);
-  }
-  .problem-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-  .problem-card {
-    background: var(--bg);
-    padding: 2rem 1.5rem;
-    border-radius: 16px;
-    text-align: center;
-    border: 2px solid transparent;
-    transition: all 0.2s;
-  }
-  .problem-card:hover {
-    border-color: var(--orange);
-    transform: translateY(-2px);
-  }
-  .problem-card .emoji {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    display: block;
-  }
-  .problem-card p {
-    color: var(--text);
-    font-size: 1rem;
-  }
-
-  /* Features */
-  .feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  .feature {
-    padding: 2rem 1.5rem;
-    border-radius: 16px;
-    background: var(--card);
-  }
-  .feature .icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    display: block;
-  }
-  .feature h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: var(--orange);
-  }
-  .feature p {
-    color: var(--secondary);
-  }
-
-  /* Pricing */
-  .pricing { background: var(--card); }
-  .price-card {
-    max-width: 480px;
-    margin: 0 auto;
-    background: var(--bg);
-    padding: 3rem 2rem;
-    border-radius: 24px;
-    text-align: center;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  }
-  .price-card .price {
-    font-size: 4rem;
-    font-weight: 800;
-    color: var(--orange);
-    line-height: 1;
-    margin: 1rem 0;
-  }
-  .price-card .price-unit { font-size: 1rem; color: var(--secondary); }
-  .price-card ul {
-    list-style: none;
-    padding: 1.5rem 0;
-    text-align: left;
-    margin: 1rem 0;
-  }
-  .price-card li {
-    padding: 0.4rem 0;
-  }
-  .price-card li::before { content: "✓ "; color: var(--orange); font-weight: bold; }
-
-  /* CTA */
-  .cta-section {
-    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
-    color: white;
-    text-align: center;
-  }
-  .cta-section h2 { color: white; }
-
-  /* Footer */
-  footer {
-    padding: 3rem 1.5rem;
-    text-align: center;
-    background: var(--card);
-    color: var(--secondary);
-    font-size: 0.9em;
-  }
-  footer a { color: var(--orange); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  /* Animations */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  section { animation: fadeUp 0.6s ease-out; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter','Noto Sans JP','SF Pro Display',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',sans-serif;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  header.hero{padding:72px 0 56px;background:linear-gradient(180deg,var(--bg-2) 0%,var(--bg) 100%);border-bottom:1px solid var(--line);}
+  header.hero .wrap{display:flex;align-items:center;gap:18px;}
+  .app-icon{width:72px;height:72px;border-radius:18px;box-shadow:0 8px 24px rgba(212,165,116,.25);}
+  .hero-text h1{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.2;}
+  .hero-text p{margin-top:6px;color:var(--ink-2);font-size:15px;}
+  main{padding:48px 0 96px;}
+  section{margin-bottom:48px;}
+  section h2{font-size:22px;font-weight:800;letter-spacing:-.01em;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  section h2 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gold);color:#fff;font-size:14px;font-weight:800;border-radius:8px;}
+  section p{color:var(--ink-2);margin-bottom:12px;}
+  .contact-card{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .contact-card .label{font-size:13px;color:var(--ink-3);}
+  .contact-card .email{font-size:18px;font-weight:700;color:var(--ink);display:block;margin-top:2px;}
+  .contact-card a.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--bg);padding:12px 22px;border-radius:100px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s;}
+  .contact-card a.btn:hover{opacity:.85;}
+  details{background:var(--bg-2);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px;cursor:pointer;transition:border-color .2s;}
+  details[open]{border-color:var(--gold);}
+  details summary{font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:'+';font-size:22px;font-weight:300;color:var(--ink-3);transition:transform .25s;line-height:1;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{margin-top:12px;color:var(--ink-2);font-size:14.5px;}
+  .legal-links{list-style:none;padding:0;}
+  .legal-links li{border-bottom:1px solid var(--line);padding:14px 0;}
+  .legal-links li:last-child{border-bottom:none;}
+  .legal-links a{display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:var(--ink);font-weight:600;font-size:15px;transition:color .2s;}
+  .legal-links a:hover{color:var(--gold);}
+  .legal-links a::after{content:'→';color:var(--ink-3);transition:transform .2s;}
+  .legal-links a:hover::after{transform:translateX(4px);color:var(--gold);}
+  footer{padding:32px 0 48px;border-top:1px solid var(--line);text-align:center;color:var(--ink-3);font-size:13px;}
+  footer a{color:var(--ink-3);}
 </style>
 </head>
-<body class="notranslate">
+<body>
 
 <header class="hero">
-  <div class="container">
-    <h1>あなたの持ち物、<br>1日いくら？</h1>
-    <p class="tagline">サブスクじゃない、サブスク見直しアプリ。<br>Netflix・ジム・スマホ・車を「1日¥X」で可視化。</p>
-    <div class="badge-row">
-      <a href="#" class="app-store-badge">📱 App Storeで近日公開</a>
-      <span class="price-badge">¥250 ワンタイム</span>
+  <div class="wrap">
+    <img class="app-icon" src="https://jiuyejiang3-star.github.io/motodore-site/assets/app-icon.png" alt="モトトレ アプリアイコン" />
+    <div class="hero-text">
+      <h1>モトトレ サポート</h1>
+      <p>持ち物のコスパ管理 / サブスク見直しアプリ</p>
     </div>
   </div>
 </header>
 
-<section class="problems">
-  <div class="container">
-    <h2>こんな悩み、ありませんか？</h2>
-    <p class="lead">家計簿アプリでは見えない「本当のコスパ」を可視化</p>
-    <div class="problem-grid">
-      <div class="problem-card">
-        <span class="emoji">📺</span>
-        <p>契約してるけど<br>見てないサブスク</p>
-      </div>
-      <div class="problem-card">
-        <span class="emoji">🏋️</span>
-        <p>ジム通ってないのに<br>月会費だけ払ってる</p>
-      </div>
-      <div class="problem-card">
-        <span class="emoji">📱</span>
-        <p>10万円のスマホ<br>本当に元取れてる？</p>
-      </div>
-      <div class="problem-card">
-        <span class="emoji">💸</span>
-        <p>サブスクが増えて<br>年間総額が把握できない</p>
-      </div>
-    </div>
-  </div>
-</section>
+<main>
+  <div class="wrap">
 
-<section>
-  <div class="container">
-    <h2>3つの計算タイプ</h2>
-    <p class="lead">お金の性質に合わせて、最適な単価を表示</p>
-    <div class="feature-grid">
-      <div class="feature">
-        <span class="icon">🎯</span>
-        <h3>元取り型</h3>
-        <p>ジム・年パスは「あと何回で元取り」進捗バーで明示。目標達成でバッジ獲得🎉</p>
-      </div>
-      <div class="feature">
-        <span class="icon">🔁</span>
-        <h3>月リセット型</h3>
-        <p>サブスクは月額÷実利用回数でリアルタイム1回単価。月末リセットで翌月仕切り直し</p>
-      </div>
-      <div class="feature">
-        <span class="icon">📊</span>
-        <h3>コスパ型</h3>
-        <p>家具家電・車・スマホは購入日からの経過日数で「1日¥X」を自動計算。使うほど安く</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="problems">
-  <div class="container">
-    <h2>高い買い物、1日いくらか知ってる？</h2>
-    <p class="lead">サブスクだけじゃない。<br>10万円超の家電・家具・車も「1日いくら」で見えるようになります。</p>
-    <div class="example-grid">
-
-      <div class="example-card">
-        <span class="example-emoji">🚗</span>
-        <p class="example-label">車</p>
-        <p class="example-price">¥3,000,000</p>
-        <p class="example-meta">10年乗るつもり</p>
-        <div class="example-arrow">▼</div>
-        <p class="example-result"><span>1日</span><strong>¥822</strong></p>
-        <p class="example-comment">長く乗るほど、1日いくらが<br>どんどん下がっていきます。</p>
-      </div>
-
-      <div class="example-card">
-        <span class="example-emoji">🧊</span>
-        <p class="example-label">冷蔵庫</p>
-        <p class="example-price">¥250,000</p>
-        <p class="example-meta">10年使う想定</p>
-        <div class="example-arrow">▼</div>
-        <p class="example-result"><span>1日</span><strong>¥68</strong></p>
-        <p class="example-comment">缶コーヒー1本以下。<br>意外と元取れてる、と気づける。</p>
-      </div>
-
-      <div class="example-card">
-        <span class="example-emoji">📱</span>
-        <p class="example-label">スマホ</p>
-        <p class="example-price">¥160,000</p>
-        <p class="example-meta">4年使う想定</p>
-        <div class="example-arrow">▼</div>
-        <p class="example-result"><span>1日</span><strong>¥110</strong></p>
-        <p class="example-comment">コンビニコーヒー1杯分。<br>毎日触ってるなら、十分元取れ。</p>
-      </div>
-
-      <div class="example-card">
-        <span class="example-emoji">🛋️</span>
-        <p class="example-label">ソファ</p>
-        <p class="example-price">¥150,000</p>
-        <p class="example-meta">7年使う想定</p>
-        <div class="example-arrow">▼</div>
-        <p class="example-result"><span>1日</span><strong>¥59</strong></p>
-        <p class="example-comment">毎日寝転ぶだけで元取れ。<br>高い買い物も納得できる。</p>
-      </div>
-
-    </div>
-    <p class="example-footnote">※ アプリでは購入日と想定使用年数を入れるだけで自動計算されます</p>
-  </div>
-</section>
-
-<section class="problems">
-  <div class="container">
-    <h2>無駄チェック&統計</h2>
-    <div class="feature-grid">
-      <div class="feature">
-        <span class="icon">⚠️</span>
-        <h3>解約検討アラート</h3>
-        <p>3ヶ月連続で割高 or 未使用のサブスクを赤で警告。解約タイミングを逃さない</p>
-      </div>
-      <div class="feature">
-        <span class="icon">📈</span>
-        <h3>年間支出ランキング</h3>
-        <p>毎月のお金が高い順にランキング表示。何が一番コスパ悪いか一目瞭然</p>
-      </div>
-      <div class="feature">
-        <span class="icon">💡</span>
-        <h3>機会コスト</h3>
-        <p>「もし投資して10年複利5%運用したら？」 サブスク年額の機会コストを可視化</p>
-      </div>
-      <div class="feature">
-        <span class="icon">📅</span>
-        <h3>月別履歴</h3>
-        <p>過去24ヶ月の使用状況を月切替Pickerで確認。傾向を把握して節約ヒントに</p>
-      </div>
-      <div class="feature">
-        <span class="icon">📦</span>
-        <h3>節約実績</h3>
-        <p>解約済みサブスクの「年間¥XX節約」を累計表示。モチベ維持に</p>
-      </div>
-      <div class="feature">
-        <span class="icon">☁️</span>
-        <h3>iCloud同期</h3>
-        <p>iPhone・iPadで自動同期。機種変も安心。第三者にデータは渡りません</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>コスパ判定の目安</h2>
-    <p class="lead">「1日いくら」が高いか安いか、判定基準を公開</p>
-
-    <div class="guide-grid">
-
-      <div class="guide-card">
-        <div class="guide-head">
-          <span class="guide-emoji">📱</span>
-          <h3>スマホ・ゲーム機</h3>
+    <section id="contact">
+      <h2><span class="num">1</span>お問い合わせ</h2>
+      <p>不具合報告・機能要望・ご質問など、何でもお気軽にご連絡ください。<br>通常 2〜3 営業日以内にご返信します。</p>
+      <div class="contact-card">
+        <div>
+          <span class="label">サポートメール</span>
+          <span class="email">jiuyejiang3@gmail.com</span>
         </div>
-        <p class="guide-formula">購入価格 ÷ (使用年数 × 365日)</p>
-        <ul class="guide-examples">
-          <li>10万円 × 2年 → 1日 ¥137</li>
-          <li>10万円 × 3年 → 1日 ¥91</li>
-          <li>15万円 × 4年 → 1日 ¥103</li>
-          <li>20万円 × 2年で買換 → 1日 ¥274</li>
-        </ul>
-        <div class="guide-benchmarks">
-          <div class="bench bench-good"><span>✅</span> 1日¥100以下 — コスパ良好</div>
-          <div class="bench bench-ok"><span>🟡</span> 1日¥150-¥200 — 標準</div>
-          <div class="bench bench-bad"><span>🔴</span> 1日¥300超 — 買換早すぎ</div>
-        </div>
-        <p class="guide-tip">💡 1日中触る道具。3〜5時間使うとして時給換算30円なら十分。</p>
+        <a class="btn" href="mailto:jiuyejiang3@gmail.com?subject=モトトレ サポート">メールを送る</a>
       </div>
+    </section>
 
-      <div class="guide-card">
-        <div class="guide-head">
-          <span class="guide-emoji">🧊</span>
-          <h3>家具家電</h3>
-        </div>
-        <p class="guide-formula">購入価格 ÷ (使用年数 × 365日)</p>
-        <ul class="guide-examples">
-          <li>25万円の冷蔵庫 × 8年 → 1日 ¥86</li>
-          <li>10万円の洗濯機 × 10年 → 1日 ¥27</li>
-          <li>20万円のテレビ × 7年 → 1日 ¥78</li>
-          <li>5万円のソファ × 5年 → 1日 ¥27</li>
-        </ul>
-        <div class="guide-benchmarks">
-          <div class="bench bench-good"><span>✅</span> 1日¥50以下 — コスパ良好</div>
-          <div class="bench bench-ok"><span>🟡</span> 1日¥100まで — 標準</div>
-          <div class="bench bench-bad"><span>🔴</span> 1日¥150超 — 買換ペース早すぎ</div>
-        </div>
-        <p class="guide-tip">💡 冷蔵庫・洗濯機は10年以上使うと元取れ実感。</p>
-      </div>
+    <section id="faq">
+      <h2><span class="num">2</span>よくあるご質問</h2>
 
-      <div class="guide-card">
-        <div class="guide-head">
-          <span class="guide-emoji">🚗</span>
-          <h3>車</h3>
-        </div>
-        <p class="guide-formula">車両価格 ÷ (使用年数 × 365日)</p>
-        <ul class="guide-examples">
-          <li>300万円 × 7年 → 1日 ¥1,174</li>
-          <li>300万円 × 10年 → 1日 ¥822</li>
-          <li>500万円のSUV × 7年 → 1日 ¥1,957</li>
-          <li>150万円の軽 × 10年 → 1日 ¥411</li>
-        </ul>
-        <div class="guide-benchmarks">
-          <div class="bench bench-good"><span>✅</span> 1日¥500以下 — 長く乗ってる</div>
-          <div class="bench bench-ok"><span>🟡</span> 1日¥1,000まで — 標準ライン</div>
-          <div class="bench bench-bad"><span>🔴</span> 1日¥2,000超 — 買換早い or ハイエンド</div>
-        </div>
-        <p class="guide-tip">💡 本体価格のみ。維持費（ガソリン・税金・車検）は別計算。</p>
-      </div>
+      <details>
+        <summary>データはどこに保存されますか？</summary>
+        <p>すべてお使いの端末内 / iCloud にのみ保存されます。第三者に提供されることはなく、広告・トラッキングも行っていません。</p>
+      </details>
 
-      <div class="guide-card">
-        <div class="guide-head">
-          <span class="guide-emoji">✨</span>
-          <h3>美容機器</h3>
-        </div>
-        <p class="guide-formula">購入価格 ÷ 使用回数</p>
-        <ul class="guide-examples">
-          <li>5万円の脱毛器 × 100回 → 1回 ¥500</li>
-          <li>5万円 × 200回 → 1回 ¥250</li>
-          <li>3万円の美顔器 × 150回 → 1回 ¥200</li>
-          <li>10万円 × 50回で放置 → 1回 ¥2,000</li>
-        </ul>
-        <div class="guide-benchmarks">
-          <div class="bench bench-good"><span>✅</span> 1回¥300以下 — コスパ良好</div>
-          <div class="bench bench-ok"><span>🟡</span> 1回¥500まで — 標準</div>
-          <div class="bench bench-bad"><span>🔴</span> 1回¥1,000超 — 未使用気味</div>
-        </div>
-        <p class="guide-tip">💡 サロン1回¥5,000〜¥10,000と比較すれば、100回で余裕。</p>
-      </div>
+      <details>
+        <summary>解約や返金はできますか？</summary>
+        <p>モトトレは <strong>¥250 の買い切り型</strong>です。サブスクリプションではないため解約手続きは不要です。<br>返金については App Store のサポートへお問い合わせください: <a href="https://reportaproblem.apple.com/" target="_blank" rel="noopener">reportaproblem.apple.com</a></p>
+      </details>
 
-      <div class="guide-card">
-        <div class="guide-head">
-          <span class="guide-emoji">🏋️</span>
-          <h3>ジム</h3>
-        </div>
-        <p class="guide-formula">月会費 ÷ 月の通った回数</p>
-        <ul class="guide-examples">
-          <li>¥10,000 × 月15回 → 1回 ¥667</li>
-          <li>¥10,000 × 月8回 → 1回 ¥1,250</li>
-          <li>¥10,000 × 月4回 → 1回 ¥2,500</li>
-          <li>¥10,000 × 月25回 → 1回 ¥400</li>
-        </ul>
-        <div class="guide-benchmarks">
-          <div class="bench bench-good"><span>✅</span> 1回¥600以下 — 週3-4以上</div>
-          <div class="bench bench-ok"><span>🟡</span> 1回¥1,000まで — 週2</div>
-          <div class="bench bench-bad"><span>🔴</span> 1回¥2,000超 — 都度払い検討</div>
-        </div>
-        <p class="guide-tip">💡 都度払いは1回¥1,500〜¥3,000。月15回以上で月会費型がお得。</p>
-      </div>
+      <details>
+        <summary>機種変更時にデータは引き継げますか？</summary>
+        <p>iCloud バックアップを有効にしていれば、新しい端末で同じ Apple ID でサインインすると自動的に引き継がれます。</p>
+      </details>
 
-      <div class="guide-card">
-        <div class="guide-head">
-          <span class="guide-emoji">📺</span>
-          <h3>動画サブスク</h3>
-        </div>
-        <p class="guide-formula">月額 ÷ 月の使用日数</p>
-        <ul class="guide-examples">
-          <li>Netflix ¥1,980 × 月22日 → 1日 ¥90</li>
-          <li>Spotify ¥980 × 月22日 → 1日 ¥45</li>
-          <li>Netflix ¥1,980 × 月5日 → 1日 ¥396</li>
-          <li>Netflix ¥1,980 × 毎日30日 → 1日 ¥66</li>
-        </ul>
-        <div class="guide-benchmarks">
-          <div class="bench bench-good"><span>✅</span> 1日¥100以下 — 元取れ</div>
-          <div class="bench bench-ok"><span>🟡</span> 1日¥200まで — ライト利用</div>
-          <div class="bench bench-bad"><span>🔴</span> 1日¥500超 — 解約検討</div>
-        </div>
-        <p class="guide-tip">💡 月22日以上で元取れライン。月5日以下なら都度レンタルが安いことも。</p>
-      </div>
+      <details>
+        <summary>iPad / Mac でも使えますか？</summary>
+        <p>現在は iPhone 専用です（iOS 17.0 以降）。iPad / Mac 版の予定は未定です。</p>
+      </details>
 
-    </div>
+      <details>
+        <summary>計算方法の詳細を知りたい</summary>
+        <p>3 種類の計算モード（元取り型・月リセット型・コスパ型）について、詳しくは <a href="https://jiuyejiang3-star.github.io/motodore-site/" target="_blank" rel="noopener">公式サイト</a> をご覧ください。</p>
+      </details>
 
-    <p class="guide-footnote">※ あくまで一般的な目安です。実際の判断は使用頻度・収入・ライフスタイルによります。</p>
-  </div>
-</section>
+      <details>
+        <summary>機能要望はどこから送れますか？</summary>
+        <p>上記の「お問い合わせ」欄からメールでご連絡ください。すべて目を通し、優先度の高いものから順に対応します。</p>
+      </details>
 
-<section class="pricing">
-  <div class="container">
-    <h2>シンプルな価格</h2>
-    <div class="lead-callout">
-      <p>アプリ代、たったの <strong class="lead-price">¥250</strong>。</p>
-      <p>使ってないサブスク <strong class="lead-highlight">1個解約</strong> したら、<br><strong class="lead-highlight">その月のうちに取り返せる</strong> 計算です。</p>
-    </div>
-    <div class="price-card">
-      <p style="color: var(--secondary); font-size: 0.9em;">買い切り</p>
-      <div class="price">¥250<span class="price-unit">/ 一回きり</span></div>
-      <ul>
-        <li>全機能が永久に使える</li>
-        <li>追加課金なし</li>
-        <li>サブスクじゃない</li>
-        <li>無料アップデート</li>
-        <li>iCloud同期・通知・CSVエクスポート</li>
-        <li>9つのカテゴリ・定番サービス20種類サジェスト</li>
+    </section>
+
+    <section id="legal">
+      <h2><span class="num">3</span>法的事項</h2>
+      <ul class="legal-links">
+        <li><a href="./privacy.html">プライバシーポリシー</a></li>
+        <li><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">利用規約 (Apple 標準 EULA)</a></li>
       </ul>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>気づかぬうちに、<br>年¥10万 消えてませんか？</h2>
-    <p class="tagline">使ってないサブスクとジムは、だいたいこのくらい。<br>モトトレで、見えるようにしませんか？</p>
-    <div class="badge-row">
-      <a href="#" class="app-store-badge">📱 App Storeで近日公開</a>
-    </div>
+    <section id="links">
+      <h2><span class="num">4</span>関連リンク</h2>
+      <ul class="legal-links">
+        <li><a href="https://jiuyejiang3-star.github.io/motodore-site/" target="_blank" rel="noopener">モトトレ 公式サイト</a></li>
+        <li><a href="https://apps.apple.com/jp/app/id6770794349" target="_blank" rel="noopener">App Store でダウンロード</a></li>
+      </ul>
+    </section>
+
   </div>
-</section>
+</main>
 
 <footer>
-  <p>© 2026 モトトレ</p>
-  <p style="margin-top: 0.5rem;">
-    <a href="privacy.html">プライバシーポリシー</a> |
-    <a href="mailto:jiuyejiang3@gmail.com">サポート</a>
-  </p>
+  <div class="wrap">
+    © 2026 sho hisano. All rights reserved.
+  </div>
 </footer>
 
 </body>
